@@ -25,7 +25,7 @@ class CardBoard extends FSMminini{
     }
 
     generate_content() {
-        const codes = shuffle(range(523, 12000));
+        const codes = shuffle(range(523, 22000));
         
         const content_length = this.n * this.m;
         const half_length = Math.floor(content_length / 2); 
@@ -67,7 +67,8 @@ class CardBoard extends FSMminini{
         canvas.remove();
         const pixel_sum = data.reduce((acc, value) => acc + value, 0);
         console.log(`symbol = ${char}, pixel_sum = ${pixel_sum}`);
-        return pixel_sum !== 5654 && pixel_sum > 400;
+        return pixel_sum > 400 && (pixel_sum < 5590 || pixel_sum > 5700);
+        // return pixel_sum !== 5654 && pixel_sum > 400;
     }
 
     create_cards() {
