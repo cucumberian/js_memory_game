@@ -25,20 +25,12 @@ class CardBoard extends FSMminini{
     }
 
     generate_content() {
-        const codes = shuffle(range(2451, 3472));
+        const codes = shuffle(range(523, 12000));
         
         const content_length = this.n * this.m;
         const half_length = Math.floor(content_length / 2); 
         let content = new Set();
-        // let i = 0;
-        // while (content.size < half_length) {
-        //     const symbol = String.fromCharCode(codes[i]);
-        //     i++;
-        //     if (this.charIsVisible(symbol, this.cards_wrapper)) {
-        //         console.log(`${symbol}: ${codes[i]}, i=${i}, content.size=${content.size}`);
-        //         content.add(symbol);
-        //     }
-        // }
+
         for (let i = 0; content.size < half_length; i++) {
             const symbol = String.fromCharCode(codes[i]);
             if (this.charIsVisible(symbol, this.cards_wrapper)) {
@@ -49,29 +41,33 @@ class CardBoard extends FSMminini{
                 break;
             }
         }
-        // for (let i = 0; i < half_length; i++){
-        //     const symbol = String.fromCharCode(codes[i]);
-        //     if (isEmptySymbol(symbol, this.cards_wrapper)) {
 
-        //     }
-
-        //     console.log(`${symbol}: ${codes[i]}`)
-        //     content.add(symbol);
-        // }
         content = [...content, ...content];
         content = shuffle(content);
         return content;
     }
 
-
-    charIsVisible(char, parent) {
-        const element = document.createElement('div');
-        element.innerText = char;
-
-        parent.append(element);
-        const isVisible = element.offsetWidth > 0 && element.offsetHeight > 0;
-        element.remove();
-        return isVisible;
+    /**
+     * Check is symbol printable.
+     * Create canvas, draw symbol and check for pixels sum.
+     * @param {char} char 
+     * @returns Boolean true - if symbol is visible
+     */
+    charIsVisible(char) {
+        // code 907 code 3130 // sum 5654 - empty symbol
+        const canvas = document.createElement('canvas');
+        canvas.width = 20;
+        canvas.height = 20;
+        const ctx = canvas.getContext('2d');
+        ctx.font = '16px sans-serif';
+        ctx.textBaseline = "middle";
+        ctx.textAlign = "center";
+        ctx.fillText(char, 10, 10);
+        const data = ctx.getImageData(0, 0, canvas.width, canvas.height).data;
+        canvas.remove();
+        const pixel_sum = data.reduce((acc, value) => acc + value, 0);
+        console.log(`symbol = ${char}, pixel_sum = ${pixel_sum}`);
+        return pixel_sum !== 5654 && pixel_sum > 400;
     }
 
     create_cards() {
