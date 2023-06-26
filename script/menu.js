@@ -1,6 +1,7 @@
 class Menu {
     constructor(element) {
         this.element = element;
+        this.header_button = document.querySelector('.header_menu');
     }
 
     hide() {

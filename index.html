@@ -21,7 +21,7 @@
 <main>
     <div id="game_wrapper" class="game_wrapper">
         <section id="game_header" class="game_header">
-            <div class menu>┄</div>
+            <div class="header_menu"></div>
             <div class="steps">0</div>
             <div>nickname</div>
         </section>
@@ -36,9 +36,9 @@
                 <label>
                     Размер поля: 
                     <div>
-                        <input type="number" min="2" max="10" value="10" name="n_cols">
+                        <input type="number" min="2" max="10" value="3" name="n_cols">
                         х
-                        <input type="number" min="2" max="10" value="10" name="m_rows">
+                        <input type="number" min="2" max="10" value="3" name="m_rows">
                     </div>
                 </label>
             </div>
@@ -53,6 +53,7 @@
                 <p class="win_description">
                     Вы решили поле XxX за n ходов!
                 </p>
+                <button class="win_button">далее</button>
             </div>
         </section>
     </div>
