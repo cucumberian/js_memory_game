@@ -34,10 +34,10 @@ class CardBoard extends FSMminini{
         for (let i = 0; content.size < half_length; i++) {
             const symbol = String.fromCharCode(codes[i]);
             if (this.charIsVisible(symbol, this.cards_wrapper)) {
-                console.log(`${symbol}: ${codes[i]}, i=${i}, content.size=${content.size}`);
+                // console.log(`${symbol}: ${codes[i]}, i=${i}, content.size=${content.size}`);
                 content.add(symbol);
             }
-            if (i > 65000) {
+            if (i > 65535) {
                 break;
             }
         }

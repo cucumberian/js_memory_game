@@ -5,4 +5,16 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: relative;
+    z-index: 10;
+}
+
+.header_menu {
+    background-image: url('../svg/menu-svgrepo-com.svg');
+    background-color: hsla(34, 78%, 91%, 0.3);
+    background-repeat: no-repeat;
+    background-size: 20px;
+    background-position: 50%;
+    width: 50px;
+    height: 50px;
 }

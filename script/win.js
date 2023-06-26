@@ -3,7 +3,7 @@ class Win {
         this.element = element;
         this.win_description = document.querySelector('p.win_description');
         this.win_text = document.querySelector(`p.win_text`);
-        console.log(`win:`, this);
+        this.win_button = document.querySelector(`button.win_button`);
     }
 
     show() {

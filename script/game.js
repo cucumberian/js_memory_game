@@ -18,7 +18,14 @@ class Game extends FSMminini {
         this.menu_start_button.addEventListener('click', () => {
             this.dispatch('to_play');
         });
+        this.menu.header_button.addEventListener('click', () => {
+            this.dispatch('header_menu');
+        });
+
         this.win = new Win(document.querySelector(this.win_selector));
+        this.win.win_button.addEventListener('click', () => {
+            this.dispatch('win_button');
+        });
         this.win.hide();
         console.log(this.win);
 
@@ -78,6 +85,9 @@ class Game extends FSMminini {
                 console.log('escape');
                 this.menu.toggle();
             },
+            header_menu() {
+                this.menu.toggle();
+            },
         },
         "win": {
             init() {
@@ -88,6 +98,9 @@ class Game extends FSMminini {
                 this.win.hide();
             },
             escape () {
+                this.change_state('menu');
+            },
+            win_button() {
                 this.change_state('menu');
             },
         },
