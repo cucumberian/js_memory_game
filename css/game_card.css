@@ -1,0 +1,55 @@
+.game_card {
+    background-color: white;
+    width: 50px;
+    height: 50px;
+    border-radius: 10px;
+    border: 1px solid  rgba(111, 111, 142, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 34px;
+}
+
+.game_card.backside {
+    background-color: rgb(200, 200, 213);
+}
+
+.game_card > p.content {
+    color: black;
+    text-align: center;
+    user-select: none;
+}
+
+.game_board {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.cards_wrapper {
+    margin: 10px auto;
+    background-color: white;
+    width: fit-content;
+    height: fit-content;
+    display: grid;
+    gap: 10px;
+}
+
+button.reset {
+    margin: 0 auto;
+    width: 100px;
+    height: 40px;
+    border-radius: 20px;
+    outline: none;
+    border: none;
+    background-color: rgb(131, 72, 88);
+    color: white;
+    font-size: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+button.reset::after {
+    content: '⟲';
+}

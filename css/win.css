@@ -1,0 +1,25 @@
+.absolute_background {
+    width: 100vw;
+    height: 100vh;
+    background-color: hsla(0, 0%, 0%, 0.7);
+    position: absolute;
+    top: 0;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.win_wrapper {
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    padding: 50px;
+    gap: 20px;
+}
+
+.win_text {
+    font-size: 24px;
+    text-align: center;
+}

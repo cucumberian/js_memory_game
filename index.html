@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>запомни число</title>
+
+    <link rel="stylesheet" href="./css/style.css">
+    
+    <link rel="stylesheet" href="./css/game_header.css">
+    <link rel="stylesheet" href="./css/game_menu.css">
+    <link rel="stylesheet" href="./css/win.css">
+    <link rel="stylesheet" href="./css/game_card.css">
+    <link rel="stylesheet" href="./css/game.css"> 
+
+</head>
+
+<body>
+<header></header>
+
+<main>
+    <div id="game_wrapper" class="game_wrapper">
+        <section id="game_header" class="game_header">
+            <div class menu>┄</div>
+            <div class="steps">0</div>
+            <div>nickname</div>
+        </section>
+
+        <section id="game_menu" class="game_menu absolute_background">
+            <div class="game_settings">
+                <label>
+                    Ваше имя<br>
+                    <input type="text" placeholder="anonymous" value="anonymous" name="nickname"> 
+                </label>
+
+                <label>
+                    Размер поля: 
+                    <div>
+                        <input type="number" min="2" max="10" value="10" name="n_cols">
+                        х
+                        <input type="number" min="2" max="10" value="10" name="m_rows">
+                    </div>
+                </label>
+            </div>
+            <button class="menu_game_start">играть</button>
+        </section>
+
+        <section id="game_board" class="game_board"></section>
+
+        <section id="game_win" class="game_win absolute_background">
+            <div class="win_wrapper">
+                <p class="win_text">Ура</p>
+                <p class="win_description">
+                    Вы решили поле XxX за n ходов!
+                </p>
+            </div>
+        </section>
+    </div>
+</main>
+
+<footer>
+    <p>minini</p>
+</footer>
+</body>
+</html>
+
+<script type="module" defer src="./script/script.js"></script>

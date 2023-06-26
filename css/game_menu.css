@@ -1,0 +1,41 @@
+.game_menu {
+    width: 100vw;
+    height: 100vh;
+    background-color: hsla(0, 0%, 0%, 0.7);
+    position: absolute;
+    top: 0;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.game_settings {
+    width: 300px;
+    height: 200px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 20px;
+    background-color: white;
+}
+
+.game_settings > label {
+    margin: 20px;
+}
+
+.menu_game_start {
+    width: 300px;
+    height: 50px;
+    border: none;
+    background-color: hsl(222, 20%, 38%);
+    color: white;
+    font-size: 24px;
+    outline: none;
+}
+.menu_game_start:focus {
+    outline: none;
+}

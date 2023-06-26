@@ -1,0 +1,8 @@
+.game_header {
+    height: 50px;
+    background-color: lightgrey;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
